@@ -1,0 +1,25 @@
+<svg viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70.000000" height="70.000000" fill="none" customFrame="#000000">
+	<defs>
+		<linearGradient id="paint_linear_0" x1="49.6467438" x2="19.5639915" y1="1.9639287" y2="77.764328" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(116,125,239)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(94,59,225)" offset="1" stop-opacity="1" />
+		</linearGradient>
+		<linearGradient id="paint_linear_1" x1="9.3925724" x2="9.23723793" y1="0.0571603924" y2="2.60133862" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(116,125,239)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(94,59,225)" offset="1" stop-opacity="1" />
+		</linearGradient>
+		<linearGradient id="paint_linear_2" x1="9.3925724" x2="9.35363007" y1="0.0285801962" y2="1.30422246" gradientUnits="userSpaceOnUse">
+			<stop stop-color="rgb(116,125,239)" offset="0" stop-opacity="1" />
+			<stop stop-color="rgb(94,59,225)" offset="1" stop-opacity="1" />
+		</linearGradient>
+	</defs>
+	<g id="Group 77">
+		<circle id="Ellipse 31" cx="35" cy="35" r="35" fill="url(#paint_linear_0)" />
+		<g id="send (2) 1">
+			<path id="Vector" d="M34.7686 15.0001C34.7686 16.3827 33.9754 17.5712 32.698 18.1008L4.6457 29.7413C3.48883 30.2213 2.14901 30.033 1.16123 29.1784C0.194163 28.3411 -0.210565 27.0501 0.105883 25.8107L2.60291 16.0187L2.86231 15.0001L2.60291 13.9814L0.105883 4.18947C-0.210565 2.95009 0.194163 1.6591 1.16123 0.821802C2.11764 -0.00564939 3.45154 -0.236602 4.6457 0.25885L32.698 11.8993C33.9754 12.429 34.7686 13.6175 34.7686 15.0001Z" fill="rgb(255,255,255)" fill-rule="nonzero" transform="matrix(0.866025,-0.5,0.5,0.866025,15,28.3843)" />
+			<path id="Vector" d="M2.60297 1.01868L0.105883 10.8107C-0.210565 12.05 0.194163 13.341 1.16123 14.1783C2.14901 15.033 3.48883 15.2213 4.6457 14.7413L32.698 3.10079C33.9754 2.57111 34.7686 1.38266 34.7686 0L2.86238 0L2.60297 1.01868Z" fill="rgb(255,255,255)" fill-rule="nonzero" transform="matrix(0.866025,-0.5,0.5,0.866025,22.5,41.3745)" />
+			<path id="Vector" d="M13.2432 1.01868C13.2432 1.58095 12.7875 2.03736 12.2245 2.03736L0 2.03736L0.259406 1.01868L0 0L12.2245 0C12.7874 6.79074e-05 13.2432 0.456406 13.2432 1.01868Z" fill="url(#paint_linear_1)" fill-rule="nonzero" transform="matrix(0.866025,-0.5,0.5,0.866025,24.2451,39.1909)" />
+			<path id="Vector" d="M0 1.01868L12.2245 1.01868C12.7874 1.01868 13.2432 0.562341 13.2432 0L0.259406 0L0 1.01868Z" fill="url(#paint_linear_2)" fill-rule="nonzero" transform="matrix(0.866025,-0.5,0.5,0.866025,24.7544,40.0732)" />
+		</g>
+	</g>
+</svg>

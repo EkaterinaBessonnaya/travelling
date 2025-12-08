@@ -1,0 +1,33 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_components.scss" as *;
+@use "../scss/iconfont";
+@use "../scss/_header.scss" as *;
+@use "../scss/_page.scss" as *;
+@use "../scss/_hero.scss" as *;
+@use "../scss/services" as *;
+@use "../scss/trips" as *;
+@use "../scss/booking" as *;
+@use "../scss/testimonials" as *;
+@use "../scss/partners" as *;
+@use "../scss/subscribe" as *;
+@use "../scss/footer" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+  padding: 0;
+}
+
+[class*="__container"] {
+  max-width: toRem(1440);
+}

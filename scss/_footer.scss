@@ -1,0 +1,162 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+@use "../scss/_variables.scss" as *;
+
+.footer {
+  // .footer__container
+  &__container {
+    max-width: toRem(1060);
+    padding-inline: toRem(186);
+    padding-bottom: toRem(79);
+
+    @media (max-width: toRem(1440)) {
+      padding-inline: toRem(56);
+
+      .footer__title {
+        margin-bottom: toRem(20);
+      }
+    }
+
+    @media (max-width: toRem(1173)) {
+      padding: toRem(30);
+
+
+      .footer__main-info {
+        row-gap: toRem(30);
+      }
+    }
+
+    @media (max-width: toRem(466)){
+      .footer__logo-block,
+      .footer__name-column {
+        text-align: center;
+      }
+
+      .footer__app-title {
+        text-align: center;
+        margin-left: 0;
+      }
+    }
+  }
+
+  // .footer__main-info
+  &__main-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: toRem(80);
+    flex-wrap: wrap;
+    margin-bottom: toRem(84);
+    font-family: "Poppins";
+    text-transform: capitalize;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $textColor;
+  }
+
+  // .footer__logo-block
+  &__logo-block {
+    max-width: toRem(207);
+    margin-top: toRem(-60);
+  }
+
+  // .footer__title
+  &__title {
+    margin-bottom: toRem(41);
+    font-size: toRem(44);
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $terracotta;
+      cursor: pointer;
+    }
+  }
+
+  .footer__logo-block p {
+    font-size: toRem(13);
+  }
+
+  // .footer__column
+  &__column {
+    min-width: toRem(120);
+  }
+
+  // .footer__name-column
+  &__name-column {
+    font-size: toRem(21);
+    font-weight: 700;
+    color: $justBlack;
+    margin-bottom: toRem(34);
+  }
+
+  .footer__list span {
+    text-transform: uppercase;
+  }
+
+  // .footer__item
+  &__item {
+    font-size: toRem(18);
+  }
+
+  // .footer__social-list
+  &__social-list {
+    display: flex;
+    gap: toRem(5);
+    margin-bottom: toRem(25);
+  }
+
+  // .footer__item-social
+  &__item-social {
+    width: 100%;
+    height: 100%;
+    transition: scale 0.5s;
+
+    @include universal-hover {
+      scale: 1.15;
+    }
+  }
+
+  // .footer__app-title
+  &__app-title {
+    margin-bottom: toRem(11);
+    font-size: toRem(20);
+    text-transform: none;
+    margin-left: toRem(10);
+  }
+
+  // .footer__link-download
+  &__link-download {
+    border: toRem(2) solid transparent;
+    border-radius: toRem(20);
+    padding: toRem(1);
+    transition: border 0.5s;
+
+    @include universal-hover {
+      border: toRem(2) solid $terracotta;
+    }
+  }
+
+  // .footer__copyright
+  &__copyright p {
+    text-align: center;
+
+    font-family: "Poppins";
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.5;
+    color: $textColor;
+    transition: color 0.5s;
+
+    @include universal-hover {
+      cursor: pointer;
+      color: $terracotta;
+    }
+  }
+
+  @include universal-hover {
+    .footer__link:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,0 +1,177 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+@use "../scss/_hero.scss" as *;
+
+.header {
+  // .header__container
+  &__container {
+    padding: toRem(47) toRem(112) toRem(0) toRem(140);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(20);
+
+    @media (max-width: toRem(1380)) {
+      padding: toRem(37) toRem(50) toRem(0) toRem(50);
+    }
+
+    @media (max-width: toRem(1050)) {
+      .header__list {
+        display: none;
+      }
+
+      .header__list--open {
+        display: flex;
+        justify-content: center;
+        gap: toRem(15);
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: toRem(30);
+        width: 100%;
+        background-color: $grey;
+        z-index: 3;
+      }
+
+      .header__burger span,
+      .header__burger span::after,
+      .header__burger span::before {
+        display: flex;
+        z-index: 4;
+      }
+    }
+
+    @media (max-width: toRem(700)) {
+      .header__list--open {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: toRem(560)) {
+      padding-inline: toRem(20);
+    }
+  }
+
+  // .header__logo
+  &__logo {
+    width: toRem(115);
+    height: toRem(35);
+    flex-shrink: 0;
+  }
+
+  // .header__menu
+  &__menu {
+    position: relative;
+  }
+
+  // .header__list
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(40);
+    flex-wrap: wrap;
+  }
+
+  // .header__item
+  &__item {
+    text-transform: capitalize;
+  }
+
+  &__item,
+  &__button,
+  &__language-switch {
+    font-size: toRem(17);
+    font-weight: 500;
+    color: $header;
+  }
+
+  &__item,
+  &__button,
+  &__language-switch,
+  &__button {
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $blueHover;
+    }
+  }
+
+  // .header__button
+  &__button {
+    border: toRem(1) $header solid;
+    border-radius: toRem(5);
+    padding: toRem(5);
+
+    @include universal-hover {
+      border-color: $blueHover;
+    }
+  }
+
+  // .header__language-switch
+  &__language-switch {
+    text-transform: uppercase;
+    background-color: transparent;
+  }
+
+  // .header__option
+  &__option {
+    background-color: $decor;
+  }
+
+  // .header__burger
+  &__burger {
+    @include universal-hover {
+      &.active span,
+      &.active span::before,
+      &.active span::after {
+        background-color: $blueHover;
+      }
+    }
+
+    & span,
+    & span::before,
+    & span::after {
+      display: none;
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      height: toRem(2);
+      width: toRem(30);
+      background-color: $justBlack;
+      transition: all 0.3s ease;
+    }
+
+    & span {
+      transform: translateY(-50%);
+    }
+
+    & span::before {
+      top: toRem(8);
+    }
+
+    & span::after {
+      top: toRem(-8);
+    }
+
+    &.active span {
+      position: fixed;
+      top: 16%;
+      right: 2%;
+      width: toRem(5);
+      height: toRem(5);
+      transform: rotate(180deg);
+    }
+
+    &.active span::before {
+      height: toRem(5);
+      width: toRem(5);
+    }
+
+    &.active span::after {
+      height: toRem(5);
+      width: toRem(5);
+    }
+  }
+}

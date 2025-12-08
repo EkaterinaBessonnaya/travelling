@@ -1,0 +1,230 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+
+.hero {
+  // .hero__container
+  &__container {
+    padding: toRem(65) toRem(112) toRem(0) toRem(140);
+    display: flex;
+    align-items: center;
+    gap: toRem(15);
+
+    @media (max-width: toRem(1380)) {
+      padding: toRem(50) toRem(50) toRem(0) toRem(50);
+
+      .hero__information {
+        padding-top: 0;
+      }
+
+      .hero__title {
+        font-size: toRem(62);
+      }
+    }
+
+    @media (max-width: toRem(930)) {
+      .hero__information {
+        padding-top: toRem(0);
+        gap: toRem(10);
+      }
+
+      .hero__title {
+        font-size: toRem(52);
+        font-weight: 600;
+      }
+
+      .hero__button {
+        padding: toRem(15);
+      }
+
+      .hero__actions {
+        gap: toRem(24);
+      }
+    }
+
+    @media (max-width: toRem(895)) {
+      .hero__title {
+        font-size: toRem(42);
+      }
+
+      @media (max-width: toRem(788)) {
+        .hero__title {
+          font-size: toRem(36);
+        }
+
+        .hero__sub-title {
+          font-size: toRem(18);
+        }
+
+        .hero__description {
+          display: none;
+        }
+
+        .hero__actions {
+          gap: toRem(10);
+        }
+
+        .hero__button {
+          font-size: toRem(14);
+          padding: toRem(10);
+        }
+
+        .video-button__icon {
+          width: toRem(45);
+        }
+
+        .video-button__text {
+          font-size: toRem(14);
+        }
+      }
+
+      @media (max-width: toRem(560)) {
+        padding: toRem(20);
+
+        .hero__title {
+          font-size: toRem(28);
+        }
+
+        .hero__actions {
+          gap: toRem(5);
+        }
+      }
+    }
+  }
+
+  // .hero__information
+  &__information {
+    padding-top: toRem(112);
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    gap: toRem(30);
+  }
+
+  // .hero__sub-title
+  &__sub-title {
+    font-family: "Poppins";
+    font-size: toRem(20);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $terracotta;
+  }
+
+  // .hero__title
+  &__title {
+    font-family: "Volkhov", serif;
+    font-size: toRem(84);
+    font-weight: 700;
+    line-height: 1.05;
+    color: $mainTitle;
+
+    &--decor {
+      position: relative;
+    }
+
+    &--decor::after {
+      content: "";
+      position: absolute;
+      left: -18%;
+      top: 19%;
+      background: url(../img/hero/decoreTitle.svg) no-repeat center / contain;
+      width: 170%;
+      height: 1.3em;
+      z-index: -1;
+    }
+  }
+
+  // .hero__description
+  &__description {
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(16);
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: left;
+    color: $paragraph;
+  }
+
+  // .hero__actions
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: toRem(44);
+  }
+
+  // .hero__button
+  &__button {
+    max-width: toRem(170);
+    padding: toRem(19) toRem(26);
+
+    font-family: "Google Sans", sans-serif;
+    font-size: toRem(18);
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+
+    border-radius: toRem(10);
+    background-color: $yellowButton;
+    color: $white;
+    transition: background-color 0.5s;
+
+    @include universal-hover {
+      background-color: $grey;
+    }
+  }
+
+  // .hero__wrapper-image
+  &__wrapper-image {
+    position: relative;
+    display: flex;
+    flex-basis: 50%;
+    flex-shrink: 0;
+    height: 100%;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 20%;
+      height: 20%;
+      position: absolute;
+      background: url(../img/svg/plane.svg) no-repeat center / contain;
+    }
+
+    &::before {
+      left: 10%;
+    }
+
+    &::after {
+      top: 10%;
+      right: -2%;
+    }
+  }
+
+  // .hero__image
+  &__image {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+.video-button {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: toRem(52);
+    height: toRem(52);
+  }
+
+  &__text {
+    font-family: "Poppins";
+    font-size: toRem(17);
+    font-weight: 500;
+    color: $grey;
+    white-space: nowrap;
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $terracotta;
+    }
+  }
+}

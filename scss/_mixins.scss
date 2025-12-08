@@ -1,0 +1,20 @@
+@use "sass:math";
+
+@function toRem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+@mixin universal-hover {
+  @media (any-hover: hover) and (any-pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (any-hover: none) and (any-pointer: coarse) {
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}

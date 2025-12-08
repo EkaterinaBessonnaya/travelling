@@ -1,0 +1,82 @@
+@use "../scss/_mixins.scss" as *;
+
+.page {
+  @media (max-width: toRem(1004)) {
+    [class*="page__"] {
+      margin-bottom: toRem(100);
+    }
+  }
+
+  &__container {
+    &::before {
+      position: absolute;
+      top: -13%;
+      right: 0;
+      z-index: -1;
+      content: "";
+      background: url(../img/hero/decoreHeroCut.jpg) no-repeat center / contain;
+      width: toRem(666);
+      height: toRem(772);
+
+      @media (max-width: toRem(1350)) {
+        top: -17%;
+        width: toRem(566);
+        height: toRem(672);
+      }
+
+      @media (max-width: toRem(1110)) {
+        top: -18%;
+        width: toRem(466);
+        height: toRem(572);
+      }
+
+      @media (max-width: toRem(885)) {
+        top: -19%;
+        width: toRem(366);
+        height: toRem(472);
+      }
+
+      @media (max-width: toRem(605)) {
+        top: -21%;
+        width: toRem(266);
+        height: toRem(372);
+      }
+    }
+  }
+
+  // .page__hero
+  &__hero {
+    max-width: toRem(1200);
+    margin-bottom: toRem(97);
+  }
+
+  // .page__services
+  &__services {
+    margin-bottom: toRem(127);
+  }
+
+  // .page__trips
+  &__trips {
+    margin-bottom: toRem(182);
+  }
+
+  // .page__booking
+  &__booking {
+    margin-bottom: toRem(200);
+  }
+
+  // .page__testimonials
+  &__testimonials {
+    margin-bottom: toRem(96);
+  }
+
+  // .page__partners
+  &__partners {
+    margin-bottom: toRem(111);
+  }
+
+  // .page__subscribe
+  &__subscribe {
+    margin-bottom: toRem(187);
+  }
+}

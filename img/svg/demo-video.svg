@@ -1,0 +1,25 @@
+<svg viewBox="10 10 92 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112" height="112" fill="none" customFrame="#000000">
+	<defs>
+		<g id="pixso_custom_effect_1">
+			<effect x="0.000000" y="15.000000" visibility="visible" fill="rgb(223,105,81)" fill-opacity="0.300000012" effectType="dropShadow" showShadowBehind="1" stdDeviation="30" radius="0" />
+		</g>
+		<filter id="filter_1" width="112" height="112" x="0.000000" y="0.000000" filterUnits="userSpaceOnUse" customEffect="url(#pixso_custom_effect_1)" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feOffset dx="0.000000" dy="15.000000" in="SourceAlpha" />
+			<feGaussianBlur stdDeviation="10" />
+			<feColorMatrix type="matrix" values="0 0 0 0 0.87451 0 0 0 0 0.411765 0 0 0 0 0.317647 0 0 0 0.3 0 " />
+			<feBlend result="effect_dropShadow_1" in2="BackgroundImageFix" mode="normal" />
+			<feBlend result="shape" in="SourceGraphic" in2="effect_dropShadow_1" mode="normal" />
+		</filter>
+	</defs>
+	<g id="Play button">
+		<g filter="url(#filter_1)">
+			<circle id="Ellipse 8" cx="56" cy="41" r="26" fill="rgb(223,105,81)" />
+		</g>
+		<path id="Polygon 1" d="M13.9952 11.25L1.00481 11.25L7.5 0L13.9952 11.25Z" fill="rgb(255,255,255)" fill-rule="evenodd" transform="matrix(-4.37114e-08,1,-1,-4.37114e-08,64,35)" />
+	</g>
+</svg>
+
+
+
+

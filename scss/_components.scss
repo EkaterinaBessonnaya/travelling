@@ -1,0 +1,46 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+
+.wrapper {
+  padding: toRem(15);
+}
+
+.section-header {
+  // .section-header__sub-title
+
+  &__sub-title {
+    margin-bottom: toRem(15);
+    font-family: "Poppins", serif;
+    font-size: toRem(18);
+    font-weight: 600;
+    color: $textColor;
+  }
+
+  // .section-header__title
+
+  &__title {
+    color: $sectionTitle;
+
+    font-family: "Volkhov", serif;
+    font-size: toRem(50);
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+
+    @media (max-width: toRem(1080)) {
+      font-size: toRem(36);
+    }
+
+    @media (max-width: toRem(484)) {
+      font-size: toRem(28);
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--left {
+    text-align: left;
+  }
+}

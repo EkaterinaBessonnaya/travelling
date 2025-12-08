@@ -1,0 +1,171 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+@use "../scss/_variables.scss" as *;
+
+.trips {
+  // .trips__container
+  &__container {
+    @media (max-width: toRem(1090)) {
+      .trips__list {
+        gap: toRem(30);
+      }
+
+      .trip__card {
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+
+        &:nth-child(2):not(:last-child) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @media (max-width: toRem(870)) {
+      .trip__description {
+        padding: toRem(20);
+        gap: toRem(15);
+      }
+    }
+
+    @media (max-width: toRem(595)) {
+      .trip__description {
+        gap: 0;
+        text-align: center;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .trip__price {
+        display: none;
+      }
+    }
+
+    @media (max-width: toRem(390)) {
+      .trip__description {
+        padding: toRem(13);
+        font-size: toRem(14);
+      }
+    }
+  }
+
+  // .trips__title
+  &__title {
+    margin-bottom: toRem(60);
+  }
+
+  // .trips__list
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: toRem(30);
+    column-gap: toRem(10);
+  }
+}
+
+.trips .section-header__sub-title {
+  text-transform: capitalize;
+}
+
+.trip {
+  // .trip__card
+  &__card {
+    max-width: toRem(315);
+    width: 100%;
+    flex-basis: 33%;
+    position: relative;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    &:not(:last-child) {
+      margin-right: toRem(35);
+    }
+
+    &:nth-child(2):not(:last-child) {
+      margin-right: toRem(60);
+    }
+
+    &:last-child::after {
+      content: "";
+      background: url(../img/trips/spring.svg) no-repeat center / contain;
+      width: 31%;
+      height: 55%;
+      position: absolute;
+      bottom: 10.3%;
+      right: -19.7%;
+      z-index: -1;
+    }
+  }
+
+  // .trip__link
+  &__link {
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  // .trip__image
+  &__image {
+    transition: scale 0.5s;
+
+    @include universal-hover {
+      scale: 1.03;
+    }
+  }
+
+  // .trip__description
+  &__description {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: toRem(19);
+    padding: toRem(27) toRem(25) toRem(42) toRem(20);
+    background-color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 toRem(23) toRem(23);
+    box-shadow: $box-shadow-decor;
+  }
+
+  // .trip__sub-title
+  &__sub-title {
+    grid-column: 1 / 2;
+    gap: toRem(9);
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $yellowButton;
+    }
+  }
+
+  // .trip__price
+  &__price {
+    @include universal-hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .trip__duretion
+  &__duretion {
+    display: flex;
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $yellowButton;
+
+      &::before {
+        color: $yellowButton;
+      }
+    }
+
+    &::before {
+      transition: color 0.5s;
+      margin-right: toRem(14);
+    }
+
+    @media (max-width: toRem(695)) {
+      display: none;
+    }
+  }
+}

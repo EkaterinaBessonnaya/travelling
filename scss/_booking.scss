@@ -1,0 +1,342 @@
+@use "../scss/_mixins.scss" as *;
+@use "../scss/_colors.scss" as *;
+@use "../scss/_variables.scss" as *;
+
+.booking {
+  // .booking__container
+  &__container {
+    max-width: toRem(1114);
+    padding: 0 toRem(140) 0 toRem(186);
+
+    @media (max-width: toRem(1180)) {
+      padding: toRem(50);
+    }
+
+    @media (max-width: toRem(1080)) {
+      .booking__steps {
+        gap: toRem(20);
+      }
+
+      .booking__trip-card {
+        margin-top: 0;
+        align-items: center;
+      }
+
+      .card-trip span {
+        display: none;
+      }
+
+      .card-trip__date {
+        border-right: none;
+      }
+    }
+
+    @media (max-width: toRem(700)) {
+      padding: toRem(20);
+
+      .booking__wrapper {
+        flex-direction: column;
+      }
+
+      .card-trip span {
+        display: block;
+      }
+
+      .card-trip__date {
+        border-right: toRem(1) solid $cardText;
+      }
+    }
+
+    @media (max-width: toRem(370)) {
+      .card-trip span {
+        display: none;
+      }
+
+      .card-trip__date {
+        border-right: none;
+      }
+    }
+  }
+
+  // .booking__title
+  &__title {
+    max-width: toRem(511);
+    margin-bottom: toRem(31);
+  }
+
+  // .booking__wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(50);
+  }
+
+  // .booking__steps
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(48);
+    max-width: toRem(395);
+  }
+
+  // .booking__trip-card
+  &__trip-card {
+    margin-top: toRem(-59);
+    max-width: toRem(370);
+    align-self: flex-start;
+  }
+}
+
+.step {
+  // .step__item
+  &__item {
+    display: grid;
+    grid-template-columns: toRem(47) auto;
+    column-gap: toRem(21);
+
+    &::before {
+      grid-column: 1;
+      grid-row: span 2;
+      content: "";
+      margin-top: toRem(5);
+      width: toRem(47);
+      aspect-ratio: 1;
+      background-size: cover;
+      transition: scale 0.5s;
+    }
+
+    @include universal-hover {
+      &:hover::before {
+        scale: 1.1;
+      }
+    }
+
+    &:nth-child(1)::before {
+      background-image: url(../img/booking/destination.svg);
+    }
+
+    &:nth-child(2)::before {
+      background-image: url(../img/booking/payment.svg);
+    }
+
+    &:nth-child(3)::before {
+      background-image: url(../img/booking/airport.svg);
+    }
+  }
+
+  // .step__sub-title
+  &__sub-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    font-weight: 700;
+    transition: color 0.5s;
+
+    @include universal-hover {
+      color: $terracotta;
+      cursor: pointer;
+    }
+  }
+
+  &__sub-title,
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(16);
+    line-height: 1.5;
+    text-transform: capitalize;
+    color: $textColor;
+
+    span {
+      text-transform: lowercase;
+    }
+  }
+
+  & p {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    @media (max-width: toRem(900)) {
+      font-size: toRem(14);
+    }
+  }
+}
+
+.card-trip {
+  font-family: "Poppins";
+  box-shadow: $box-shadow-decor;
+  border-radius: $border-radius;
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(13);
+    padding: toRem(20) toRem(24) toRem(30) toRem(25);
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      width: 50%;
+      height: 50%;
+      position: absolute;
+      top: -30%;
+      left: 90%;
+      filter: blur(toRem(150));
+      background: $blurDecor;
+      opacity: 0.8;
+      z-index: 0;
+    }
+  }
+
+  // .card-trip__image
+  &__image {
+    margin-bottom: toRem(13);
+    border-radius: $border-radius;
+  }
+
+  // .card-trip__title
+  &__title {
+    text-transform: capitalize;
+  }
+
+  .status-trip__title,
+  &__title {
+    font-size: toRem(18);
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+    transition: color 0.5s;
+
+    @include universal-hover {
+      &:hover {
+        color: $cardHover;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: toRem(16);
+    margin-bottom: toRem(8);
+  }
+
+  // .card-trip__date
+  .status-trip__sub-title,
+  &__date,
+  &__customer,
+  &__footer {
+    font-weight: 500;
+    color: $cardText;
+    white-space: nowrap;
+  }
+
+  &__date {
+    padding-right: toRem(4);
+    border-right: toRem(1) solid $cardText;
+  }
+
+  // .card-trip__actions
+  &__actions {
+    display: flex;
+    gap: toRem(15);
+    margin-bottom: toRem(16);
+  }
+
+  // .card-trip__footer
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(10);
+    width: 100%;
+    letter-spacing: -2%;
+    transition: color 0.5s;
+
+    span::before {
+      margin-right: toRem(15);
+    }
+
+    @include universal-hover {
+      span,
+      span::before,
+      .card-trip__favourite {
+        color: $cardHover;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.action {
+  // .action__item
+  &__item {
+    width: toRem(36);
+    height: toRem(36);
+  }
+
+  // .action__link
+  &__link {
+    border-radius: 50%;
+    border: toRem(2) solid transparent;
+    transition: border 0.5s;
+
+    @include universal-hover {
+      border: toRem(2) solid $cardHover;
+    }
+  }
+}
+
+.status-trip {
+  display: none;
+  padding: toRem(16) toRem(25) toRem(27) toRem(16);
+  box-shadow: $box-shadow-decor;
+  border-radius: toRem(18);
+  background-color: $white;
+
+  &.visible {
+    display: grid;
+    grid-column: 2fr;
+    grid-row: 3fr;
+    gap: toRem(10);
+    align-items: center;
+    max-width: toRem(263);
+    position: absolute;
+    bottom: 13%;
+    right: -20%;
+  }
+
+  // .status-trip__image
+  &__image {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: toRem(50);
+    height: toRem(50);
+    border-radius: 50%;
+  }
+
+  // .status-trip__sub-title
+  &__sub-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: toRem(14);
+  }
+
+  // .status-trip__title
+  &__title {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  // .status-trip__library
+  &__library {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: toRem(14);
+
+    span {
+      color: $niceColor;
+      margin-right: toRem(5);
+    }
+  }
+}
