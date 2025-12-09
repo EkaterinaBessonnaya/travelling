@@ -36,7 +36,7 @@
       .header__burger span,
       .header__burger span::after,
       .header__burger span::before {
-        display: flex;
+        display: block;
         z-index: 4;
       }
     }
@@ -157,8 +157,8 @@
 
     &.active span {
       position: fixed;
-      top: 16%;
-      right: 2%;
+      top: 10%;
+      right: 5%;
       width: toRem(5);
       height: toRem(5);
       transform: rotate(180deg);

@@ -20,13 +20,12 @@
     @media (max-width: toRem(1173)) {
       padding: toRem(30);
 
-
       .footer__main-info {
         row-gap: toRem(30);
       }
     }
 
-    @media (max-width: toRem(466)){
+    @media (max-width: toRem(466)) {
       .footer__logo-block,
       .footer__name-column {
         text-align: center;

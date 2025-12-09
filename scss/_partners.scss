@@ -6,17 +6,18 @@
   // .partners__container
   &__container {
     max-width: toRem(1073);
-    overflow: hidden;
+    padding-inline: toRem(20);
   }
 
   // .partners__list
   &__list {
     display: flex;
     gap: toRem(70);
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     padding-inline: toRem(20);
-    animation: scroll 15s linear infinite;
+    animation: scroll 5s linear infinite;
 
     @include universal-hover {
       animation-play-state: paused;
@@ -44,11 +45,11 @@
 }
 
 @keyframes scroll {
-  0% {
-    transform: translate(0%);
+  from {
+    transform: translateX(0%);
   }
 
-  100% {
-    transform: translate(-35%);
+  to {
+    transform: translateX(-50%);
   }
 }
